@@ -1,0 +1,401 @@
+/* main.css - סגנונות בסיסיים וגלובליים */
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS Variables */
+:root {
+    /* צבעים ראשיים */
+    --primary-blue: #2563eb;
+    --secondary-blue: #3b82f6;
+    --light-blue: #60a5fa;
+    --bg-blue: #f0f7ff;
+    
+    /* צבעים משניים */
+    --success-green: #22c55e;
+    --warning-orange: #f97316;
+    --danger-red: #ef4444;
+    --warning-yellow: #fbbf24;
+    
+    /* צבעי טקסט */
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    
+    /* צללים */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+    --shadow-md: 0 2px 15px rgba(0,0,0,0.06);
+    --shadow-lg: 0 4px 20px rgba(0,0,0,0.08);
+    
+    /* מרווחים */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    
+    /* גדלי גופן */
+    --font-xs: 0.75rem;
+    --font-sm: 0.85rem;
+    --font-md: 1rem;
+    --font-lg: 1.2rem;
+    --font-xl: 1.5rem;
+    --font-2xl: 2rem;
+    --font-3xl: 2.5rem;
+    --font-4xl: 4rem;
+    
+    /* רדיוסים */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+    
+    /* מעברים */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease-in-out;
+}
+
+/* Typography */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: var(--font-md);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: clip;
+    overflow-y: scroll;
+    direction: rtl;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+}
+
+h1 { font-size: var(--font-4xl); }
+h2 { font-size: var(--font-3xl); }
+h3 { font-size: var(--font-2xl); }
+h4 { font-size: var(--font-xl); }
+h5 { font-size: var(--font-lg); }
+h6 { font-size: var(--font-md); }
+
+/* Container */
+.presentation-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* Base Slide Styles */
+.slide {
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    display: none;
+    transform: translateX(100%);
+    transition: var(--transition-slow);
+    overflow-y: auto;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    display: block;
+    z-index: 2;
+}
+
+.slide.prev {
+    transform: translateX(-100%);
+    opacity: 0;
+    z-index: 1;
+}
+
+.slide.next {
+    transform: translateX(100%);
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Fixed Logo */
+.slide-logo {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 80px;
+    display: none;
+    filter: opacity(0.5);
+    z-index: 10;
+    animation: slide_logo_fade 2s ease-out forwards;
+}
+
+/* Common Card Styles */
+.card {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+    border: 1px solid #e2e8f0;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Common Button Styles */
+.btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    font-size: var(--font-sm);
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: var(--primary-blue);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--secondary-blue);
+}
+
+.btn-secondary {
+    background: #f1f5f9;
+    color: var(--text-secondary);
+}
+
+.btn-secondary:hover {
+    background: #e2e8f0;
+}
+
+/* Common Input Styles */
+.input-range {
+    width: 100%;
+    margin: var(--spacing-sm) 0;
+    -webkit-appearance: none;
+    background: transparent;
+}
+
+.input-range::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(to right, #dbeafe 0%, #93c5fd 100%);
+    border-radius: var(--radius-sm);
+    border: none;
+}
+
+.input-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: var(--primary-blue);
+    cursor: pointer;
+    margin-top: -6px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-fast);
+}
+
+.input-range::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+.mt-1 { margin-top: var(--spacing-sm); }
+.mt-2 { margin-top: var(--spacing-md); }
+.mt-3 { margin-top: var(--spacing-lg); }
+.mt-4 { margin-top: var(--spacing-xl); }
+
+.mb-1 { margin-bottom: var(--spacing-sm); }
+.mb-2 { margin-bottom: var(--spacing-md); }
+.mb-3 { margin-bottom: var(--spacing-lg); }
+.mb-4 { margin-bottom: var(--spacing-xl); }
+
+.p-1 { padding: var(--spacing-sm); }
+.p-2 { padding: var(--spacing-md); }
+.p-3 { padding: var(--spacing-lg); }
+.p-4 { padding: var(--spacing-xl); }
+
+.hidden { display: none; }
+.block { display: block; }
+.flex { display: flex; }
+.grid { display: grid; }
+
+<!-- הוסף את הסגנונות האלה לקובץ main.css או צור קובץ background-fix.css חדש -->
+
+<style>
+/* Global Background Fix */
+html {
+    min-height: 100vh;
+    background: #f0f7ff;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: #f0f7ff;
+    /* הסרת הגבלות רוחב */
+    width: 100%;
+    min-width: 100vw;
+}
+
+/* Presentation Container Fix */
+.presentation-container {
+    width: 100vw;
+    min-width: 100vw;
+    height: 100vh;
+    min-height: 100vh;
+    position: relative;
+    background: #f0f7ff;
+}
+
+/* Fix for each slide background */
+.slide {
+    background: #f0f7ff;
+    min-width: 100vw;
+    width: 100%;
+}
+
+/* Specific slide backgrounds */
+#slide1 {
+    background: linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 100%);
+    min-width: 100vw;
+    width: 100%;
+}
+
+/* Slide 2, 3, 4 backgrounds */
+.slide3-body,
+.slide5-body,
+.slide6-body {
+    background: #f0f7ff;
+    min-height: 100vh;
+    width: 100%;
+    min-width: 100vw;
+    margin: 0;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    /* במקום display: flex וcenter, נשתמש ב-padding */
+    display: block;
+    padding-top: 2rem;
+}
+
+/* Container cards centering without limiting background */
+.slide3-slide,
+.slide5-container,
+.slide6-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 1400px;
+    padding: 1.75rem;
+    /* מרכוז עם margin auto */
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Ensure slide 1 decorations don't create scrollbars */
+.slide_one_decoration {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    opacity: 0.4;
+    pointer-events: none;
+    /* חשוב: overflow hidden למניעת גלילה */
+    overflow: hidden;
+}
+
+/* Remove any max-width constraints from body */
+body > * {
+    max-width: none;
+}
+
+/* Viewport meta tag suggestion - add to HTML head:
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+*/
+
+/* Additional fixes for zoom out scenarios */
+@media (max-width: 1400px) {
+    .slide3-body,
+    .slide5-body,
+    .slide6-body {
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width: 2000px) {
+    /* For very wide screens or zoom out */
+    html, body {
+        background: #f0f7ff;
+    }
+    
+    .slide {
+        background: #f0f7ff;
+    }
+    
+    #slide1 {
+        background: linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 100%);
+    }
+}
+
+/* Fix for navigation controls to stay in viewport */
+.nav-controls {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+/* Ensure decorative elements stay within bounds */
+#slide1 {
+    overflow: hidden;
+}
+
+/* Override any conflicting styles */
+html,
+body,
+.presentation-container,
+.slide,
+.slide3-body,
+.slide5-body,
+.slide6-body {
+    box-sizing: border-box;
+}
+
+/* Force full coverage on all zoom levels */
+@media screen and (max-resolution: 1dppx) {
+    body {
+        background: #f0f7ff;
+        min-width: 100vw;
+    }
+}
+
+@media screen and (min-resolution: 2dppx) {
+    body {
+        background: #f0f7ff;
+        min-width: 100vw;
+    }
+}

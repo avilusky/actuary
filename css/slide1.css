@@ -1,0 +1,249 @@
+/* slide1.css - סגנונות שקף הפתיחה */
+
+#slide1 {
+    background: linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 100%);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+}
+
+.slide_one_body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Content Wrapper */
+.slide_one_content_wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    z-index: 2;
+}
+
+/* Logo Container */
+.slide_one_logo_container {
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: slide_one_fadeInSlideDown 1s ease-out forwards;
+}
+
+.slide_one_logo {
+    width: 120px;
+    height: auto;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    transform: translateY(-20px);
+    animation: slide_one_float 6s ease-in-out infinite;
+}
+
+/* Text Content */
+.slide_one_text_content {
+    opacity: 0;
+    animation: slide_one_fadeInSlideUp 1s ease-out forwards;
+    animation-delay: 0.5s;
+    padding: 1rem;
+}
+
+/* Main Title */
+.slide_one_main_title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #1e40af;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(37, 99, 235, 0.2);
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slide_one_fadeInSlideUp 1s ease-out forwards;
+}
+
+.slide_one_main_title::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #3b82f6, transparent);
+    opacity: 0;
+    animation: slide_one_fadeIn 1.5s ease-out forwards;
+    animation-delay: 1s;
+}
+
+/* Subtitle */
+.slide_one_subtitle {
+    font-size: 2.2rem;
+    color: #1e293b;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slide_one_fadeInSlideUp 1s ease-out forwards;
+    animation-delay: 1s;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Decorative Elements */
+.slide_one_decoration {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.slide_one_decoration_1 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #60a5fa, #3b82f6);
+    top: -200px;
+    right: -200px;
+    animation: slide_one_float 10s ease-in-out infinite;
+}
+
+.slide_one_decoration_2 {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(135deg, #818cf8, #6366f1);
+    bottom: -250px;
+    left: -250px;
+    animation: slide_one_float 12s ease-in-out infinite reverse;
+}
+
+/* Additional Decorative Shapes */
+.slide_one_decoration_3 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #a5b4fc, #c7d2fe);
+    top: 50%;
+    right: -150px;
+    animation: slide_one_float 15s ease-in-out infinite;
+}
+
+/* Particle Effects (Optional) */
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(37, 99, 235, 0.3);
+    border-radius: 50%;
+    animation: particleFloat 20s linear infinite;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(100px);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .slide_one_main_title {
+        font-size: 3.5rem;
+    }
+    
+    .slide_one_subtitle {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .slide_one_main_title {
+        font-size: 2.5rem;
+        padding: 0 1rem;
+    }
+    
+    .slide_one_subtitle {
+        font-size: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .slide_one_logo {
+        width: 90px;
+    }
+    
+    .slide_one_decoration_1,
+    .slide_one_decoration_2 {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .slide_one_content_wrapper {
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media (max-width: 480px) {
+    .slide_one_main_title {
+        font-size: 2rem;
+    }
+    
+    .slide_one_subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .slide_one_logo {
+        width: 70px;
+    }
+    
+    .slide_one_decoration {
+        filter: blur(60px);
+    }
+}
+
+/* תיקון גודל קבוע לכל המסכים */
+.slide_one_main_title {
+    font-size: 4rem !important;
+}
+
+.slide_one_subtitle {
+    font-size: 2.2rem !important;
+}
+
+.slide_one_logo {
+    width: 120px !important;
+}
+
+/* רק למסכים ממש קטנים (מובייל) */
+@media (max-width: 480px) {
+    .slide_one_main_title {
+        font-size: 2.5rem !important;
+    }
+    
+    .slide_one_subtitle {
+        font-size: 1.5rem !important;
+    }
+    
+    .slide_one_logo {
+        width: 80px !important;
+    }
+}

@@ -1,0 +1,581 @@
+/* slide2.css - סגנונות שקף המודל */
+
+.slide3-body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f0f7ff;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+}
+
+.slide3-slide {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 1400px;
+    padding: 1.75rem;
+    margin: 0 auto;
+}
+
+/* Title Section */
+.slide3-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1.25rem;
+    background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.slide3-title h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(to left, #0284c7, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.slide3-title h2 {
+    font-size: 1.1rem;
+    color: #475569;
+    font-weight: 500;
+}
+
+/* Model Stages Grid */
+.slide3-model-stages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Stage Cards */
+.slide3-stage-card {
+    padding: 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #e2e8f0;
+}
+
+.slide3-stage-card.slide3-savings {
+    background: linear-gradient(145deg, #ffffff, #f0fdf4);
+    border: 2px solid #22c55e;
+    box-shadow: 0 4px 6px rgba(34, 197, 94, 0.1);
+}
+
+.slide3-stage-card.slide3-insurance {
+    background: linear-gradient(145deg, #ffffff, #f0f7ff);
+    border: 2px solid #3b82f6;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
+}
+
+.slide3-stage-card:hover {
+    transform: translateY(-3px);
+}
+
+.slide3-stage-card h3 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid;
+}
+
+.slide3-stage-card.slide3-savings h3 {
+    color: #16a34a;
+    border-bottom-color: #22c55e;
+}
+
+.slide3-stage-card.slide3-insurance h3 {
+    color: #2563eb;
+    border-bottom-color: #3b82f6;
+}
+
+/* Feature List */
+.slide3-feature-list {
+    list-style: none;
+}
+
+.slide3-feature-list li {
+    background: white;
+    margin-bottom: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.slide3-stage-card.slide3-savings .slide3-feature-list li {
+    border-right: 3px solid #22c55e;
+}
+
+.slide3-stage-card.slide3-insurance .slide3-feature-list li {
+    border-right: 3px solid #3b82f6;
+}
+
+.slide3-feature-list li:hover {
+    transform: translateX(-3px);
+}
+
+.slide3-feature-list strong {
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+.slide3-stage-card.slide3-savings .slide3-feature-list strong {
+    color: #16a34a;
+}
+
+.slide3-stage-card.slide3-insurance .slide3-feature-list strong {
+    color: #2563eb;
+}
+
+/* Savings Goals Section */
+.slide3-savings-goals {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+.slide3-savings-goal-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.slide3-savings-goal-item:first-child {
+    position: relative;
+}
+
+.slide3-savings-goal-item:first-child::after {
+    content: "";
+    position: absolute;
+    right: -0.75rem;
+    height: 70%;
+    width: 1px;
+    background: #e2e8f0;
+}
+
+.slide3-savings-goal-label {
+    font-size: 0.9rem;
+    color: #6366f1;
+    font-weight: 500;
+}
+
+.slide3-savings-goal-item.slide3-women .slide3-savings-goal-label {
+    color: #8b5cf6;
+}
+
+.slide3-savings-goal-amount {
+    font-weight: 600;
+    font-size: 0.95rem;
+    background: linear-gradient(to right, #6366f1, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.slide3-savings-goal-item.slide3-women .slide3-savings-goal-amount {
+    background: linear-gradient(to right, #8b5cf6, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Guarantees Section */
+.slide3-guarantees {
+    background: linear-gradient(145deg, #ffffff, #fffbeb);
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-top: 1.5rem;
+    border: 2px solid #fbbf24;
+}
+
+.slide3-guarantees h3 {
+    color: #b45309;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #fbbf24;
+}
+
+.slide3-guarantee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem;
+}
+
+.slide3-guarantee-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #fcd34d;
+    transition: all 0.3s ease;
+}
+
+.slide3-guarantee-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(251, 191, 36, 0.2);
+}
+
+.slide3-guarantee-item h4 {
+    color: #d97706;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.slide3-guarantee-item p {
+    color: #57534e;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Tooltip Styles */
+.slide3-tooltip-trigger {
+    position: relative;
+    cursor: help;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 2px;
+}
+
+.slide3-tooltip-trigger::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    right: 50%;
+    transform: translateX(50%);
+    padding: 0.5rem 1rem;
+    background: rgba(254, 252, 232, 0.98);
+    border: 1px solid #fef08a;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #854d0e;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    pointer-events: none;
+}
+
+.slide3-tooltip-trigger:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: calc(100% + 5px);
+}
+
+.slide3-tooltip-trigger.slide3-long::after {
+    white-space: normal;
+    width: max-content;
+    max-width: 200px;
+    text-align: center;
+}
+
+/* Dialog Trigger */
+.slide3-dialog-trigger {
+    color: #2563eb;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.slide3-dialog-trigger:hover {
+    color: #1d4ed8;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .slide3-model-stages {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .slide3-slide {
+        padding: 1rem;
+    }
+    
+    .slide3-title h1 {
+        font-size: 1.4rem;
+    }
+    
+    .slide3-title h2 {
+        font-size: 0.9rem;
+    }
+    
+    .slide3-stage-card {
+        padding: 1rem;
+    }
+    
+    .slide3-savings-goals {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .slide3-savings-goal-item:first-child::after {
+        display: none;
+    }
+}
+<!-- הוסף את הסגנונות האלה לקובץ slide2.css או צור קובץ dialogs.css חדש -->
+
+<style>
+/* Dialog Container */
+#dialogs-container {
+    position: relative;
+    z-index: 10000;
+}
+
+/* Dialog Styles - Fixed */
+.slide3-dialog-overlay {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999 !important;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* When dialog is open */
+.slide3-dialog-overlay[style*="display: flex"] {
+    display: flex !important;
+}
+
+.slide3-dialog-content {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 700px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: dialogFadeIn 0.3s ease-out;
+    margin: auto;
+}
+
+@keyframes dialogFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.slide3-dialog-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.slide3-dialog-description {
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: right;
+    direction: rtl;
+}
+
+.slide3-dialog-description ol {
+    margin: 1rem 0;
+    padding-right: 1.5rem;
+}
+
+.slide3-dialog-description li {
+    margin-bottom: 1rem;
+}
+
+.slide3-dialog-chart {
+    height: 350px;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
+.slide3-dialog-close {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: #ef4444;
+    color: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.slide3-dialog-close:hover {
+    background: #dc2626;
+    transform: scale(1.1);
+}
+
+/* Premium Table in Dialog */
+.slide3-premium-table {
+    width: 100%;
+    margin: 1rem 0;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.slide3-premium-table thead {
+    background: linear-gradient(135deg, #e0f2fe, #dbeafe);
+}
+
+.slide3-premium-table th {
+    padding: 0.75rem;
+    text-align: center;
+    color: #1e40af;
+    font-weight: 600;
+    border-bottom: 2px solid #93c5fd;
+}
+
+.slide3-premium-table td {
+    padding: 0.75rem;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.slide3-premium-table tbody tr:hover {
+    background: #f0f9ff;
+}
+
+.slide3-premium-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Ensure dialog trigger is properly styled */
+.slide3-dialog-trigger {
+    color: #2563eb !important;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    display: inline;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.slide3-dialog-trigger:hover {
+    color: #1d4ed8 !important;
+    text-decoration: underline;
+}
+
+/* Override any conflicting styles */
+.slide3-body {
+    position: relative !important;
+}
+
+.slide {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .slide3-dialog-content {
+        padding: 1.5rem;
+        width: 95%;
+        max-width: 95%;
+    }
+    
+    .slide3-dialog-title {
+        font-size: 1.2rem;
+    }
+    
+    .slide3-dialog-description {
+        font-size: 0.9rem;
+    }
+    
+    .slide3-dialog-chart {
+        height: 280px;
+    }
+    
+    .slide3-premium-table th,
+    .slide3-premium-table td {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+}
+
+.example-ribbon {
+    position: absolute;
+    top: 30px;
+    left: -35px;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    color: #78350f;
+    padding: 8px 45px;
+    font-size: 1rem;
+    font-weight: 600;
+    transform: rotate(-45deg);
+    box-shadow: 0 2px 8px rgba(251, 191, 36, 0.2);
+    z-index: 10;
+    border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+/* קצוות מעודנים */
+.example-ribbon::before,
+.example-ribbon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: rgba(251, 191, 36, 0.4);
+}
+
+.example-ribbon::before {
+    top: -3px;
+    left: 0;
+}
+
+.example-ribbon::after {
+    bottom: -3px;
+    left: 0;
+}
+
+/* מיקום הקונטיינר צריך overflow: hidden */
+.slide3-slide {
+    overflow: hidden;
+    position: relative;
+}
+</style>
